@@ -1,6 +1,10 @@
 server:
   servlet:
+<<<<<<< HEAD
     context-path: /poke
+=======
+    context-path: /buscaCep
+>>>>>>> 7fff666 (AddressApi)
   port: 8081
 
 pokemon-external-api: https://pokeapi.co/api/v2/pokemon
@@ -8,7 +12,11 @@ pokemon-external-api: https://pokeapi.co/api/v2/pokemon
 spring:
   datasource:
     driverClassName: org.postgresql.Driver
+<<<<<<< HEAD
     url: jdbc:postgresql://localhost:5432/pokedexapi-db
+=======
+    url: jdbc:postgresql://localhost:5432/addressapi-db
+>>>>>>> 7fff666 (AddressApi)
     username: postgres
     password: 12345
   jpa:
