@@ -14,9 +14,15 @@ public class AddressDto {
     private Long id;
     private Integer cep;
     private String logradouro;
+<<<<<<< HEAD
     private String complemento;
     private String bairro;
     private String localidade;
+=======
+    private Integer numero;
+    private String bairro;
+    private String cidade;
+>>>>>>> 5912b04 (AddressApi)
     private String uf;
 
     public AddressDto(Address address) {

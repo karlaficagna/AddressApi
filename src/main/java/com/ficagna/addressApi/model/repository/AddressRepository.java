@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+<<<<<<< HEAD
 import java.util.Optional;
 
 @Repository
@@ -21,6 +22,16 @@ public interface AddressRepository extends JpaRepository<com.ficagna.addressApi.
 
     @Query("SELECT count(pk) FROM Address pk WHERE pk.cep LIKE %:cep%")
     Integer cepAlreadyExistsInternallyByCep(@Param("cep") String cep);
+=======
+
+@Repository
+public interface AddressRepository extends JpaRepository<Address, Integer> {
+    @Transactional
+    @Modifying
+
+    @Query("SELECT pk FROM Cep pk WHERE pk.cep LIKE %:cep%")
+    Address findAddressByCep(@Param("cep") Integer cep);
+>>>>>>> 5912b04 (AddressApi)
 
     Address salvar(Address addressConvertido);
 }

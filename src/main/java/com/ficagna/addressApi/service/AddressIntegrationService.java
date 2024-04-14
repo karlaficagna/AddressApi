@@ -17,6 +17,7 @@ import java.util.List;
 @Service
 public class AddressIntegrationService {
 
+<<<<<<< HEAD
     private final RestTemplate restTemplate;
     @Value("${app.cep.fallback-order}")
     private final String uri;
@@ -48,10 +49,21 @@ public class AddressIntegrationService {
     private String generateURLIntegration(String cep) {
         return this.uri + "/" + cep;
     }
+=======
+    private final ExternalCepRestService externalCepRestService;;
+
+
+    public AddressDto findAddressByCep(String cep) {
+
+        return externalCepRestService.searchByCep(cep);
+    }
+
+>>>>>>> 5912b04 (AddressApi)
 
     public AddressResponse salvar(AddressRequest addressRequest) {
         Address addressConvertido = addressRequest.converterParaEntity();
         Address addressSalvo = addressRepository.salvar(addressConvertido);
+<<<<<<< HEAD
         AddressResponse produtoResponse = new AddressResponse(addressSalvo.getId());
         return AddressResponse.builder().build();
     }
@@ -62,6 +74,12 @@ public class AddressIntegrationService {
     }
 
 
+=======
+        AddressResponse addressResponse = new AddressResponse(addressSalvo.getId());
+        return AddressResponse.builder().build();
+    }
+
+>>>>>>> 5912b04 (AddressApi)
 }
 
 

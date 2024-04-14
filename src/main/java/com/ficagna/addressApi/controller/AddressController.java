@@ -17,14 +17,19 @@ import javax.validation.Valid;
 @AllArgsConstructor
 @NoArgsConstructor
 @RestController
+<<<<<<< HEAD
 @RequestMapping("api/v1/enderecos")
 @CrossOrigin(origins = "*")
+=======
+@RequestMapping(path = "/cep")
+>>>>>>> 5912b04 (AddressApi)
 public class AddressController {
 
     @Autowired
     private AddressIntegrationService addressIntegrationService;
     private AddressRepository addressRepository;
 
+<<<<<<< HEAD
     public AddressController(com.ficagna.addressApi.service.AddressIntegrationService addressIntegrationService) {
         this.addressIntegrationService = addressIntegrationService;
     }
@@ -37,6 +42,15 @@ public class AddressController {
     @GetMapping("/cep/{cep}")
     public ResponseEntity<AddressDto> findByCep(@PathVariable String cep) {
         return ResponseEntity.ok(addressIntegrationService.findByCep(cep));
+=======
+    public AddressController(AddressIntegrationService addressIntegrationService) {
+        this.addressIntegrationService = addressIntegrationService;
+    }
+
+   @GetMapping("/cep/{cep}")
+    public ResponseEntity<AddressDto> findAddressByCep(@PathVariable String cep) {
+        return ResponseEntity.ok(addressIntegrationService.findAddressByCep(cep));
+>>>>>>> 5912b04 (AddressApi)
     }
 
     @PostMapping
