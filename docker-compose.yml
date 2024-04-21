@@ -1,19 +1,15 @@
 version: '3.8'
 services:
-    pokedex-api:
-<<<<<<< HEAD
-        container_name: pokedexapi-db
-=======
+    address - api:
+
         container_name: adressapi- db
->>>>>>> 7fff666 (AddressApi)
+
         image: postgres:12.5-alpine
         ports:
             - "5432:5432"
         environment:
             POSTGRES_USER: postgres
             POSTGRES_PASSWORD: 12345
-<<<<<<< HEAD
-            POSTGRES_DB: pokedexapi-db
-=======
+
             POSTGRES_DB: adressapi-db
->>>>>>> 7fff666 (AddressApi)
+

@@ -26,17 +26,14 @@ public class AddressResponse {
     private String cep;
     @ApiModelProperty("logradouro_address")
     private Integer logradouro;
-    @ApiModelProperty("complemento_address")
+    @ApiModelProperty("numero_address")
     private Integer complemento;
     @ApiModelProperty("bairro_address")
     private Integer bairro;
-    @ApiModelProperty("localidade_address")
+    @ApiModelProperty("cidade_address")
     private Integer localidade;
     @ApiModelProperty("uf_address")
     private Integer uf;
-    @ApiModelProperty
-    private String url;
-
 
     public AddressResponse(Long id) {
     }

@@ -17,19 +17,19 @@ public class AddressRequest {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @JsonProperty("id")
     private Long id;
+
     @JsonProperty("address")
     private Integer cep;
     private String logradouro;
-    private String complemento;
+    private String numero;
     private String bairro;
-    private String localidade;
+    private String cidade;
     private String uf;
 
     public AddressRequest() {
     }
 
     public Address converterParaEntity() {
-
         return new Address();
     }
 }

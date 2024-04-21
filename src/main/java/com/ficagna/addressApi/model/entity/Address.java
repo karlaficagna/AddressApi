@@ -9,6 +9,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @ToString
+@Builder
 @RequiredArgsConstructor
 public class Address {
 
@@ -23,21 +24,13 @@ public class Address {
     private String logradouro;
 
     @Column(nullable = false)
-<<<<<<< HEAD
-    private String complemento;
-=======
     private Integer numero;
->>>>>>> 5912b04 (AddressApi)
 
     @Column(nullable = false)
     private String bairro;
 
     @Column(nullable = false)
-<<<<<<< HEAD
-    private String localidade;
-=======
     private String cidade;
->>>>>>> 5912b04 (AddressApi)
 
     @Column(nullable = false)
     private String uf;
