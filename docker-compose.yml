@@ -1,15 +1,13 @@
 version: '3.8'
 services:
-    address - api:
+  postgres:
 
-        container_name: adressapi- db
 
-        image: postgres:12.5-alpine
-        ports:
-            - "5432:5432"
-        environment:
-            POSTGRES_USER: postgres
-            POSTGRES_PASSWORD: 12345
-
-            POSTGRES_DB: adressapi-db
+    image: postgres:16-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: addressapidb
 

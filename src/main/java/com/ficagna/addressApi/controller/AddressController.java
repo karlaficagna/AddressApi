@@ -2,14 +2,12 @@ package com.ficagna.addressApi.controller;
 
 import com.ficagna.addressApi.controller.resourses.AddressRequest;
 import com.ficagna.addressApi.controller.resourses.AddressResponse;
-import com.ficagna.addressApi.model.entity.Address;
 import com.ficagna.addressApi.model.entity.AddressDto;
 import com.ficagna.addressApi.model.repository.AddressRepository;
 import com.ficagna.addressApi.service.AddressIntegrationService;
 import com.ficagna.addressApi.service.CepService;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,7 +32,7 @@ public class AddressController {
     }
 
     @GetMapping
-    public Address getAddressByCep(@RequestParam("cep") Integer cep) {
+    public AddressDto getAddressByCep(@RequestParam("cep") Integer cep) {
         return cepService.searchAddress(cep);
     }
 

@@ -5,13 +5,9 @@ import lombok.*;
 import javax.persistence.*;
 
 @Entity
-@Table(schema = "Address")
-@Getter
-@Setter
-@ToString
-@Builder
-@RequiredArgsConstructor
-public class Address {
+@Table
+@Data
+public class Address extends AddressDto {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

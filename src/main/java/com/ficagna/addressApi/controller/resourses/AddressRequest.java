@@ -2,6 +2,8 @@ package com.ficagna.addressApi.controller.resourses;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.ficagna.addressApi.model.entity.Address;
+import com.ficagna.addressApi.model.entity.AddressDto;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import nonapi.io.github.classgraph.json.Id;
@@ -11,6 +13,7 @@ import javax.persistence.GenerationType;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class AddressRequest {
 
     @Id
@@ -29,8 +32,8 @@ public class AddressRequest {
     public AddressRequest() {
     }
 
-    public Address converterParaEntity() {
-        return new Address();
+    public AddressDto converterParaEntity() {
+        return new AddressDto();
     }
 }
 

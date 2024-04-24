@@ -1,6 +1,7 @@
 package com.ficagna.addressApi.model.repository;
 
 import com.ficagna.addressApi.model.entity.Address;
+import com.ficagna.addressApi.model.entity.AddressDto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -23,5 +24,5 @@ public interface AddressRepository extends JpaRepository<Address, Long> {
     Address searchByCep(@Param("cep") String cep);
 
 
-    Address salvar(Address addressConvertido);
+    Address salvar(AddressDto addressConvertido);
 }

@@ -52,19 +52,21 @@ public class AddressIntegrationService {
 
     private final ExternalCepRestService externalCepRestService;
 
-
     public AddressDto searchByCep(Integer cep) {
         return externalCepRestService.searchByCep(cep);
     }
 
-
     public AddressResponse salvar(AddressRequest addressRequest) {
-        Address addressConvertido = addressRequest.converterParaEntity();
+        AddressDto addressConvertido = addressRequest.converterParaEntity();
         Address addressSalvo = addressRepository.salvar(addressConvertido);
-
         AddressResponse addressResponse = new AddressResponse(addressSalvo.getId());
         return AddressResponse.builder().build();
+
     }
+
+
+
+
 
 
 }
