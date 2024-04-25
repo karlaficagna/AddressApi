@@ -14,7 +14,6 @@ public class CepService {
 
     private final ExternalCepRestService externalCepRestService;
 
-
     public AddressDto searchAddress(Integer cep) {
         return externalCepRestService.searchByCep(cep);
     }

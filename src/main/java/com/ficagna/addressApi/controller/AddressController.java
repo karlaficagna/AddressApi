@@ -42,7 +42,7 @@ public class AddressController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<AddressDto> findById(@PathVariable Long id) {
+    public ResponseEntity<AddressResponse> findById(@PathVariable Long id) {
         return ResponseEntity.ok(addressIntegrationService.findById(id));
     }
 

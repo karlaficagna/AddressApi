@@ -9,9 +9,10 @@ import java.util.List;
 
 @RequiredArgsConstructor
 public class FallBackRestImpl implements ExternalCepRestService {
-    private final List<Integer> fallbackOrder;
+    private final List<String> fallbackOrder;
     private List<ExternalCepRestService> externalImpl =
             List.of();
+
 
     public AddressDto searchByCep(String cep) {
 
