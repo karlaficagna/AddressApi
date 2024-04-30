@@ -4,10 +4,13 @@ import lombok.*;
 
 import javax.persistence.*;
 
-@Entity
-@Table
 @Data
-public class Address extends AddressDto {
+@Entity
+@Builder
+@Table
+@NoArgsConstructor
+@AllArgsConstructor
+public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

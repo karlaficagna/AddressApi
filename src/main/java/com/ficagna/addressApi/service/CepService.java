@@ -1,7 +1,6 @@
 package com.ficagna.addressApi.service;
 
 import com.ficagna.addressApi.model.entity.Address;
-import com.ficagna.addressApi.model.entity.AddressDto;
 import com.ficagna.addressApi.service.rest.ExternalCepRestService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,8 +13,8 @@ public class CepService {
 
     private final ExternalCepRestService externalCepRestService;
 
-    public AddressDto searchAddress(Integer cep) {
-        return externalCepRestService.searchByCep(cep);
+    public Address searchAddress(Integer cep) {
+        return externalCepRestService.findByCep(cep);
     }
 
 }

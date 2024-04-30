@@ -1,7 +1,7 @@
 package com.ficagna.addressApi.service.rest.implemantation;
 
 
-import com.ficagna.addressApi.model.entity.AddressDto;
+import com.ficagna.addressApi.model.entity.Address;
 import com.ficagna.addressApi.service.rest.ExternalCepRestService;
 import lombok.RequiredArgsConstructor;
 
@@ -14,12 +14,12 @@ public class FallBackRestImpl implements ExternalCepRestService {
             List.of();
 
 
-    public AddressDto searchByCep(String cep) {
+    public Address searchByCep(String cep) {
 
-        AddressDto response = null;
+        Address response = null;
         for (ExternalCepRestService externalService : externalImpl) {
             try {
-                 response = externalService.searchByCep(Integer.valueOf(cep));
+                 response = externalService.findByCep(Integer.valueOf(cep));
                  break;
             } catch (RuntimeException ex) {
                 continue;
@@ -29,7 +29,7 @@ public class FallBackRestImpl implements ExternalCepRestService {
     }
 
     @Override
-    public AddressDto searchByCep(Integer cep) {
+    public Address findByCep(Integer cep) {
         return null;
     }
 }

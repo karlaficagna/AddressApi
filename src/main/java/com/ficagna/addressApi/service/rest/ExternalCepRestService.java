@@ -1,8 +1,8 @@
 package com.ficagna.addressApi.service.rest;
 
-import com.ficagna.addressApi.model.entity.AddressDto;
+import com.ficagna.addressApi.model.entity.Address;
 
 public interface ExternalCepRestService {
-    AddressDto searchByCep(Integer cep);
+    Address findByCep(Integer cep);
 
 }

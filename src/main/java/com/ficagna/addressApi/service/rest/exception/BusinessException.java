@@ -1,4 +1,4 @@
-package com.ficagna.addressApi.service.rest.implemantation.exception;
+package com.ficagna.addressApi.service.rest.exception;
 
 import lombok.Getter;
 import org.springframework.http.HttpStatus;

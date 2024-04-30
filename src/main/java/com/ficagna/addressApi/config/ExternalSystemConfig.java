@@ -6,13 +6,14 @@ import com.ficagna.addressApi.service.rest.implemantation.BrasilApiRestServiceIm
 import com.ficagna.addressApi.service.rest.implemantation.CepAbertoServiceImpl;
 import com.ficagna.addressApi.service.rest.implemantation.FallBackRestImpl;
 import com.ficagna.addressApi.service.rest.implemantation.ViaCepRestServiceImpl;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import java.util.List;
 import java.util.Map;
-
+@RequiredArgsConstructor
 @Configuration
 public class ExternalSystemConfig {
     @Value("${app.cep.api}")
