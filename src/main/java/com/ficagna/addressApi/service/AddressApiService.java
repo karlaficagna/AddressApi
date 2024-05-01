@@ -1,7 +1,6 @@
 package com.ficagna.addressApi.service;
 
-import com.ficagna.addressApi.model.dto.AddressResponse;
-import com.ficagna.addressApi.model.entity.Address;
+import com.ficagna.addressApi.model.dto.BrasilApiResponseDTO;
 import com.ficagna.addressApi.service.rest.exception.AddressNotFoundException;
 import com.ficagna.addressApi.service.rest.exception.BusinessException;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -21,10 +20,10 @@ public class AddressApiService {
         this.uri = "app.cep.fallback-order=VIACEP,CEPABERTO,BRASILAPI";
     }
 
-    public AddressResponse findById(Long id) {
+    public BrasilApiResponseDTO findById(Long id) {
         String url = generateURLIntegration(id);
         try {
-            return this.restTemplate.getForObject(url, AddressResponse.class);
+            return this.restTemplate.getForObject(url, BrasilApiResponseDTO.class);
         } catch (HttpClientErrorException ex) {
             if (HttpStatus.NOT_FOUND.equals(ex.getStatusCode())) {
                 throw new AddressNotFoundException((id.intValue()));
@@ -33,10 +32,10 @@ public class AddressApiService {
         }
     }
 
-    public AddressResponse findByCep(Integer cep) {
+    public BrasilApiResponseDTO findByCep(Integer cep) {
         String url = generateURLIntegration(cep);
         try {
-            return this.restTemplate.getForObject(url, AddressResponse.class);
+            return this.restTemplate.getForObject(url, BrasilApiResponseDTO.class);
         } catch (HttpClientErrorException ex) {
             if (HttpStatus.NOT_FOUND.equals(ex.getStatusCode())) {
                 throw new AddressNotFoundException((cep));
@@ -47,12 +46,12 @@ public class AddressApiService {
 
     private String generateURLIntegration(Long id) {
 
-        return this.uri + "/" + id;
+        return this.uri + "/addressapi" + id;
     }
 
     private String generateURLIntegration(Integer cep) {
 
-        return this.uri + "/" + cep;
+        return this.uri + "/addressapi" + cep;
     }
 
 

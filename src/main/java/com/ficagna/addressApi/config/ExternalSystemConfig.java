@@ -43,6 +43,6 @@ public class ExternalSystemConfig {
     @Bean
     @ConditionalOnProperty(value = "app.cep.fallback", havingValue = "true")
     public ExternalCepRestService externalCepRestServiceFallback() {
-        return new FallBackRestImpl(this.falbackOrder);
+        return new FallBackRestImpl(this.falbackOrder, externalSystemBean());
     }
 }
